@@ -102,6 +102,7 @@ int main(){
         t.changeBoard();
 
         if (t.checkWinner()){
+            t.printBoard();
             t.displayWinner();
             break;
         }

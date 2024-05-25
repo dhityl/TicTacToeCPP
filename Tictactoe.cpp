@@ -5,19 +5,19 @@ class TicTacToe {
     private:
 
     char gameBoard[3][3] = {
-        {' ', ' ', ' '}, 
-        {' ', ' ', ' '}, 
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
         {' ', ' ', ' '}
     };
     char currentPlayer = 'O';
     int row, column;
     bool winner;
-    
+
     public:
 
     // print current board
     void printBoard(){
-        
+
     cout << "   |   |   " << endl;
     cout << " " << gameBoard[0][0] << " | " << gameBoard[0][1] << " | " << gameBoard[0][2] << endl;
     cout << "___|___|___" << endl;
@@ -36,7 +36,7 @@ class TicTacToe {
         if (currentPlayer == 'O'){
             currentPlayer = 'X';
         }
-        else 
+        else
         if (currentPlayer == 'X'){
             currentPlayer = 'O';
         }
@@ -58,6 +58,7 @@ class TicTacToe {
 
     // check if the board has a winner
     bool checkWinner(){
+        // check rows
         for (int r = 0; r < 3; r++) {
             if (gameBoard[r][0] != ' ' && gameBoard[r][0] == gameBoard[r][1] && gameBoard[r][1] == gameBoard[r][2]) {
                 winner = true;;
@@ -65,7 +66,7 @@ class TicTacToe {
             }
         }
 
-        //columns - vertical
+        // check columns
         for (int c = 0; c < 3; c++) {
             if (gameBoard[0][c] != ' ' && gameBoard[0][c] == gameBoard[1][c] && gameBoard[1][c] == gameBoard[2][c]) {
                 winner = true;;
@@ -73,7 +74,7 @@ class TicTacToe {
             }
         }
 
-        //diagonal
+        // check diagonals
         if (gameBoard[0][0] != ' ' && gameBoard[0][0] == gameBoard[1][1] && gameBoard[1][1] == gameBoard[2][2]) {
             winner = true;
         }
@@ -93,6 +94,7 @@ class TicTacToe {
 };
 
 int main(){
+
     TicTacToe t;
     for (int i = 0; i<9; i++){
         t.printBoard();

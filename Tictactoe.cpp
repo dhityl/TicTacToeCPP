@@ -111,6 +111,11 @@ int main(){
             break;
         }
         t.changePlayer();
+
+        if (i==8){
+            t.printBoard();
+            cout<<"Game Over!\nIt's a draw.";
+        }
     }
 
 

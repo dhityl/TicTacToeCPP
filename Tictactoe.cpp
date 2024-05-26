@@ -8,12 +8,16 @@ class TicTacToe {
         {' ', ' ', ' '},
         {' ', ' ', ' '},
         {' ', ' ', ' '}
-    };
-    char currentPlayer = 'O';
+        };
+    char currentPlayer;
     int row, column;
     bool winner;
 
     public:
+    // generator for first player
+    TicTacToe(){
+        currentPlayer = 'O';
+    }
 
     // print current board
     void printBoard(){
